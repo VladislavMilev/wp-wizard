@@ -1,0 +1,90 @@
+﻿span,
+input {
+	
+	border:2px solid rgba(255,255,255,.5);
+	font-size:1.75em;
+	padding:.25em .5em .3125em;
+	color:rgba(255,255,255,.5);
+	border-radius:.25em;
+	background:transparent;
+	transition:all .100s;
+	
+	&:focus{
+		outline:none;
+		color:rgba(255,255,255,.75);
+		border-color:rgba(255,255,255,.75);
+	}
+	
+	&.keyup {
+		color:#D64316;
+		border-color:white;
+		text-shadow:0 0 .125em white;
+		box-shadow:0 0 .25em white,inset 0 0 .25em white;
+	}
+}
+
+
+canvas {
+	position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	pointer-events:none;
+}
+
+input {
+	font-family: "Arial Rounded MT Bold","Helvetica Rounded",Arial,sans-serif;
+}
+
+$placeholder-color:rgba(255,255,255,.5);
+
+::-webkit-input-placeholder {
+	color:$placeholder-color;
+	text-shadow:0 0 .125em transparent;
+	transition:all .25s;
+}
+input:focus::-webkit-input-placeholder {
+	opacity:.5;
+}
+
+::-moz-placeholder {
+	color:$placeholder-color;
+	text-shadow:0 0 .125em transparent;
+	transition:all .25s;
+}
+input:focus::-moz-placeholder {
+	opacity:.5;
+}
+
+:-ms-input-placeholder {
+	color:$placeholder-color;
+	text-shadow:0 0 .125em transparent;
+	transition:all .25s;
+}
+input:focus:-ms-input-placeholder {
+	opacity:.5;
+}
+
+html,body {
+	height:100%;
+	overflow:hidden;
+}
+
+html {
+	background:#333 url(http://papers.co/wallpaper/papers.co-sh78-bonjur-maki-gradation-blur-36-3840x2400-4k-wallpaper.jpg) no-repeat center bottom;
+	background-size:cover;
+}
+
+body {
+	box-shadow:inset 0 0 5em #000; 
+}
+
+input {
+	position:absolute;
+	box-sizing:border-box;
+	bottom: 4em;
+	left:50%;
+	width:11em;
+	margin-left:-5.5em;
+}
