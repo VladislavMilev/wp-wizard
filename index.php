@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>WP INSTALL WIZARD</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="icon" type="image/vnd.microsoft.icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Wordpress_logo_8.png/605px-Wordpress_logo_8.png">
 </head>
 <body>
 
