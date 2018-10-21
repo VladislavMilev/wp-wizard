@@ -11,7 +11,7 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 
-# Вход в админку
+# Login Admin
 
 - Login: admin
 - Pass: 1
