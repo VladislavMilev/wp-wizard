@@ -44,6 +44,7 @@ $placeholder-color:rgba(255,255,255,.5);
 	text-shadow:0 0 .125em transparent;
 	transition:all .25s;
 }
+
 input:focus::-webkit-input-placeholder {
 	opacity:.5;
 }

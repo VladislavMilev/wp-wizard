@@ -1,14 +1,14 @@
 <?
-$template_testing_folder = ''; //WP Template Path
-$site_url = ""; //Static IP for replace path in DB
+$template_testing_folder = ''; 	//WP Template Path
+$site_url = ""; 			   	//Static IP for replace path in DB
 $wp_zip_path = "wordpress.zip"; //zip file name must be - wordpress.zip
 
 $prodId = $_GET['prodId'];
-$db_name = $_GET['prodId']; //because it is necessary ;)
+$db_name = $_GET['prodId']; 	//because it is necessary ;)
 
-$servername = "localhost"; //Server name, host name
-$username = "root"; //DB Username
-$password = ""; //DB Password
+$servername = "localhost"; 		//Server name, host name
+$username = "root"; 			//DB Username
+$password = ""; 				//DB Password
 
 header('Location:'."$site_url"."$db_name"."/wp-admin");
 
