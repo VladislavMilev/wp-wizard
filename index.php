@@ -17,7 +17,7 @@
 		<label for="is_kava">NEED KAVA?</label>
 	</form>
 
-<a class="version" href="https://github.com/VladislavMilev/wp-wizard" target="_blank">version 1.1</a>
+<a class="version" href="https://github.com/VladislavMilev/wp-wizard" target="_blank">version 1.2</a>
 
 <script>
 		

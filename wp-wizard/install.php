@@ -1,6 +1,6 @@
 <?
-$template_testing_folder = 'D:\OSPanel\domains\localhost\2018'; //WP Template Path
-$site_url = "http://192.168.1.106/2018/"; //Static IP for replace path in DB
+$template_testing_folder = ''; //WP Template Path
+$site_url = ""; //Static IP for replace path in DB
 $wp_zip_path = "wordpress.zip"; //zip file name must be - wordpress.zip
 
 $prodId = $_GET['prodId'];
