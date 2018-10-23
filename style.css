@@ -73,7 +73,7 @@ html,body {
 }
 
 html {
-	background:#333 url(http://papers.co/wallpaper/papers.co-sh78-bonjur-maki-gradation-blur-36-3840x2400-4k-wallpaper.jpg) no-repeat center bottom;
+	background:#333 url(img/backgound.jpg) no-repeat center bottom;
 	background-size:cover;
 }
 
@@ -88,4 +88,33 @@ input {
 	left:50%;
 	width:11em;
 	margin-left:-5.5em;
+}
+
+.logo_tm{
+	width: 800px;
+	display: block;
+  	margin: 0 auto;
+}
+
+a:link, a:active {
+color:#ccffff;
+font-weight:200;
+text-decoration:none
+}
+a:visited {
+color:#66cc66;
+font-weight:200;
+}
+a:hover {
+color:#cc99ff;
+font-weight:200;
+text-decoration:none
+}
+
+a.version{
+	position:absolute;
+	bottom: 20px;
+	/*left:50%;*/
+	width:11em;
+	margin-left:20px;
 }
