@@ -1,9 +1,10 @@
 <?
-$template_testing_folder = ''; //WP Template Path
-$site_url = ""; //Static IP for replace path in DB
+$template_testing_folder = 'D:\OSPanel\domains\localhost\2018'; //WP Template Path
+$site_url = "http://192.168.1.106/2018/"; //Static IP for replace path in DB
 $wp_zip_path = "wordpress.zip"; //zip file name must be - wordpress.zip
 
 $prodId = $_GET['prodId'];
+$is_kava = $_GET['is_kava'];
 $db_name = $_GET['prodId']; //because it is necessary ;)
 
 $servername = "localhost"; //Server name, host name
@@ -23,12 +24,9 @@ function relocateWP(){
 	$zip = new ZipArchive;
     $zip->open("$wp_zip_path");
     $zip->extractTo("wordpress");
-    // $zip->extractTo("$template_testing_folder"."/"."$prodId");
     $zip->close();
 
     rename("wordpress/wordpress", "$template_testing_folder"."/"."$prodId");
-    // rename("$prodId","$template_testing_folder");
-
 }
 
 function replace_config(){
@@ -64,6 +62,25 @@ function createDB(){
 	}
 
 	$conn->close();
+}
+
+function is_kava(){
+	
+	global $is_kava, $template_testing_folder, $prodId;
+
+	if($is_kava == 'Yes'){
+
+		$source = "https://github.com/ZemezLab/kava/archive/master.zip";
+		$dest = "kava.zip";
+		copy($source, $dest);
+
+		$zip = new ZipArchive;
+	    $zip->open("kava.zip");
+	    $zip->extractTo("kava");
+	    $zip->close();
+
+	    rename("kava/kava-master", "$template_testing_folder"."\\"."$prodId"."\\"."wp-content"."\\"."themes"."\\"."kava");
+	}
 }
 
 function importMainSQL(){
@@ -104,6 +121,7 @@ if (substr(trim($line), -1, 1) == ';'){
 }
 
 relocateWP();
+is_kava();
 createDB();
 importMainSQL();
-replace_config();?>
+replace_config();

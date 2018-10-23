@@ -11,8 +11,10 @@
 	<img src="img/logo.png" alt="" class="logo_tm">
 
 	<form action="wp-wizard/install.php">
-		<input type="text" name="prodId" required="true" placeholder="PROD-ID" /></br>
-		<input type="submit" value="" />
+		<input type="text" name="prodId" required="true" placeholder="PROD-ID"/></br>
+		<input class="btn" type="submit" value="" /></br>
+		<input id="is_kava" type="checkbox" name="is_kava" value="Yes">
+		<label for="is_kava">NEED KAVA?</label>
 	</form>
 
 <a class="version" href="https://github.com/VladislavMilev/wp-wizard" target="_blank">version 1.1</a>
