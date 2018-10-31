@@ -1,5 +1,5 @@
-# wp-wizard
-# version 1.2
+# Wp-wizard
+# Version 1.2
 1. Задать пути в переменных к папке с WordPress установками в директории - wp-wizard/install.php
 - Пример - $template_testing_folder = 'D:\OS\OpenServer\domains\localhost\2018';
 
@@ -16,3 +16,6 @@ $password = "";
 
 - Login: admin
 - Pass: 1
+
+# Video
+https://youtu.be/6wCGbX67Otg
