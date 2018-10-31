@@ -13,8 +13,12 @@
 	<form action="wp-wizard/install.php">
 		<input type="text" name="prodId" required="true" placeholder="PROD-ID"/></br>
 		<input class="btn" type="submit" value="" /></br>
-		<input id="is_kava" type="checkbox" name="is_kava" value="Yes">
-		<label for="is_kava">NEED KAVA?</label>
+
+		<input id="is_kava" type="checkbox" name="is_monstroid" value="Yes">
+		<label id="kava" for="is_kava">NEED KAVA?</label>
+		
+		<input id="is_monstroid" type="checkbox" name="is_monstroid" value="Yes">
+		<label id="monstr" for="is_monstroid">NEED MONSTROID?</label>
 	</form>
 
 <a class="version" href="https://github.com/VladislavMilev/wp-wizard" target="_blank">version 1.2</a>
@@ -60,12 +64,12 @@ function burst(intensity) {
 	];
 	
 	var size = 1.25;
-	var force = .7;
+	var force = 1.7;
 	var lifeMin = 0;
 	var progress = Math.min(field.width, caret.offsetWidth) / field.width;
 	var offset = field.left + (field.width * progress);
-	var rangeMin = Math.max(field.left, offset - 30);
-	var rangeMax = Math.min(field.right, offset + 10);
+	var rangeMin = Math.max(field.left, offset - 10);
+	var rangeMax = Math.min(field.right, offset + 90);
 	
 	this.spray(intensity,function(){ return [
 		null,null,
@@ -199,22 +203,6 @@ simulate(
 				}
 		}
 );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // "simulate" particle simulation logic
 /**

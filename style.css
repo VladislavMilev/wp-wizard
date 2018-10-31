@@ -26,19 +26,6 @@
 	}
 }
 
-label{
-	position:absolute;
-	left:31%;
-	bottom: 250px;
-	font-size:1em;
-	padding:.25em .5em .3125em;
-	color:rgba(255,255,255,.4);
-	border-radius:.25em;
-	background:transparent;
-	transition:all .100s;
-}
-
-
 canvas {
 	position:absolute;
 	left:0;
@@ -142,4 +129,38 @@ a.version{
 	position: absolute;
     left: 30%;
     bottom: 255px;
+}
+
+#is_monstroid{
+	position: absolute;
+    left: 40%;
+    bottom: 255px;
+
+    display: none;
+}
+
+label#kava{
+	position:absolute;
+	left:31%;
+	bottom: 250px;
+	font-size:1em;
+	padding:.25em .5em .3125em;
+	color:rgba(255,255,255,.4);
+	border-radius:.25em;
+	background:transparent;
+	transition:all .100s;
+}
+
+label#monstr{
+	position:absolute;
+	left:41%;
+	bottom: 250px;
+	font-size:1em;
+	padding:.25em .5em .3125em;
+	color:rgba(255,255,255,.4);
+	border-radius:.25em;
+	background:transparent;
+	transition:all .100s;
+
+	display: none;
 }
