@@ -14,7 +14,7 @@
 		<input type="text" name="prodId" required="true" placeholder="PROD-ID"/></br>
 		<input class="btn" type="submit" value="" /></br>
 
-		<input id="is_kava" type="checkbox" name="is_monstroid" value="Yes">
+		<input id="is_kava" type="checkbox" name="is_kava" value="Yes">
 		<label id="kava" for="is_kava">NEED KAVA?</label>
 		
 		<input id="is_monstroid" type="checkbox" name="is_monstroid" value="Yes">
