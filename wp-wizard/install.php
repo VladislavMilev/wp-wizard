@@ -105,7 +105,7 @@ if (!$db_select) {
 }
 
 $templine = '';
-$lines = file($filename);
+$lines = file($db_filename);
 foreach ($lines as $line){
 if (substr($line, 0, 2) == '--' || $line == '')
     continue;
