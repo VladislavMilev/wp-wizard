@@ -87,13 +87,12 @@ function importMainSQL(){
 
 global $db_name, $servername, $username, $password, $site_url;
 
-$filename = "main.sql";
-$file = file_get_contents($filename);
+$db_filename = "main.sql";
+$file = file_get_contents($db_filename);
 $file = str_replace('site_url', "$site_url"."$db_name", $file);
 file_put_contents("main_1.sql", $file);
 
-// Name of the file
-$filename = "main_1.sql";
+$db_filename = "main_1.sql";
 
 $connection = mysqli_connect($servername, $username, $password);
 if (!$connection) {
