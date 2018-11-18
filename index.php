@@ -7,6 +7,11 @@
 	<link rel="icon" type="image/vnd.microsoft.icon" href="img/Wordpress_logo_8.png">
 </head>
 <body>
+	<?php  $get_version = 1.3; 
+
+	$section = file_get_contents("https://raw.githubusercontent.com/VladislavMilev/wp-wizard/master/README.md", FALSE, NULL, 22, 3);
+
+	?>
 	
 	<img src="img/logo.png" alt="" class="logo_tm">
 
@@ -21,7 +26,17 @@
 		<label id="monstr" for="is_monstroid">NEED MONSTROID?</label>
 	</form>
 
-<a class="version" href="https://github.com/VladislavMilev/wp-wizard" target="_blank">version 1.2</a>
+<a class="version" href="https://github.com/VladislavMilev/wp-wizard" target="_blank">
+	<?php 
+
+		if ($section != $get_version) {
+	 		echo "Need an update to version ".$section;
+		}else{
+	 		echo "You have the latest version ". $get_version;
+		}
+	?>
+		
+</a>
 
 <script>
 		
