@@ -114,7 +114,31 @@ text-decoration:none
 }
 
 a.version{
-	color: rgba(255,255,255,.5);
+	color: rgba(215, 44, 44, 0.8);
+	position:absolute;
+	bottom: 40px;
+	/*left:50%;*/
+	margin-left:20px;
+}
+
+a.version:hover {
+	color: rgba(215, 44, 44, 1);
+	position:absolute;
+	bottom: 40px;
+	/*left:50%;*/
+	margin-left:20px;
+}
+
+a.donate{
+	color: rgb(255, 255, 255, .8);
+	position:absolute;
+	bottom: 20px;
+	/*left:50%;*/
+	margin-left:20px;
+}
+
+a.donate:hover {
+	color: rgb(255, 255, 255, 1);
 	position:absolute;
 	bottom: 20px;
 	/*left:50%;*/
@@ -131,12 +155,10 @@ a.version{
     bottom: 255px;
 }
 
-#is_monstroid{
+#is_git{
 	position: absolute;
     left: 40%;
     bottom: 255px;
-
-    display: none;
 }
 
 label#kava{
@@ -151,7 +173,7 @@ label#kava{
 	transition:all .100s;
 }
 
-label#monstr{
+label#is_git{
 	position:absolute;
 	left:41%;
 	bottom: 250px;
@@ -162,5 +184,4 @@ label#monstr{
 	background:transparent;
 	transition:all .100s;
 
-	display: none;
 }

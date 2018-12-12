@@ -22,8 +22,8 @@
 		<input id="is_kava" type="checkbox" name="is_kava" value="Yes">
 		<label id="kava" for="is_kava">NEED KAVA?</label>
 		
-		<input id="is_monstroid" type="checkbox" name="is_monstroid" value="Yes">
-		<label id="monstr" for="is_monstroid">NEED MONSTROID?</label>
+		<input id="is_git" type="checkbox" name="is_git" value="Yes">
+		<label id="is_git" for="is_git">NEED MASTER GIT?</label>
 	</form>
 
 <a class="version" href="https://github.com/VladislavMilev/wp-wizard" target="_blank">
@@ -35,6 +35,10 @@
 	 		echo "You have the latest version ". $get_version;
 		}
 	?>
+		
+</a>
+
+<a class="donate" href="https://www.liqpay.ua/ru/checkout/card/380991926924" target="_blank">Support me
 		
 </a>
 

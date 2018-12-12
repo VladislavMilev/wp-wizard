@@ -5,11 +5,13 @@ $wp_zip_path = "wordpress.zip"; //zip file name must be - wordpress.zip
 
 $prodId = $_GET['prodId'];
 $is_kava = $_GET['is_kava'];
+$is_git = $_GET['is_git'];
 $db_name = $_GET['prodId']; //because it is necessary ;)
 
 $servername = "localhost"; //Server name, host name
 $username = "root"; //DB Username
 $password = ""; //DB Password
+$ROOT = __DIR__;
 
 header('Location:'."$site_url"."$db_name"."/wp-admin");
 
@@ -66,7 +68,7 @@ function createDB(){
 
 function is_kava(){
 	
-	global $is_kava, $template_testing_folder, $prodId;
+	global $is_kava, $template_testing_folder, $prodId, $ROOT;
 
 	if($is_kava == 'Yes'){
 
@@ -81,6 +83,54 @@ function is_kava(){
 
 	    rename("kava/kava-master", "$template_testing_folder"."\\"."$prodId"."\\"."wp-content"."\\"."themes"."\\"."kava");
 	}
+}
+
+function getGITrepository(){
+
+	global $is_git, $template_testing_folder, $prodId, $ROOT;
+
+	
+
+	if($is_git == 'Yes'){
+
+		$_getLink = $_GET['prod_name'];
+		$_link_to_git = "http://products.git.devoffice.com/templates/prod-".$prodId;
+		$dir    = $template_testing_folder;
+
+		// 21260
+
+		$_masterLink = $_link_to_git . "/tree/master";
+		$_packageLink = $_link_to_git . "/tree/package";
+
+		$_getMasterZip = $_link_to_git . "/repository/archive.zip?ref=master";
+		$_getPackageZip = $_link_to_git . "/repository/archive.zip?ref=package";
+
+
+		$source = $_getMasterZip;
+		$dest = "master.zip";
+
+		copy($source, $dest);
+
+		$zip = new ZipArchive;
+		$zip->open("master.zip");
+		$zip->extractTo($ROOT."//master");
+		$zip->close();
+
+		$files = scandir($ROOT."/master", 1);
+
+		$content = file ($ROOT."/"."master/".$files[0]."/style.css");
+		foreach ($content as $full_line) {
+    		$line = explode (': ', $full_line); 
+    		if ($line[0] == "Text Domain") {
+        		$result = $line[1];
+        	break;
+    		}
+		}
+		$trimmed = rtrim($result);
+		rename($ROOT."/"."master/".$files[0], "$template_testing_folder"."\\"."$prodId"."\\"."wp-content"."\\"."themes"."\\"."$trimmed");
+		
+	}
+
 }
 
 function importMainSQL(){
@@ -121,6 +171,7 @@ if (substr(trim($line), -1, 1) == ';'){
 
 relocateWP();
 is_kava();
+getGITrepository();
 createDB();
 importMainSQL();
 replace_config();
