@@ -7,7 +7,7 @@
 	<link rel="icon" type="image/vnd.microsoft.icon" href="img/Wordpress_logo_8.png">
 </head>
 <body>
-	<?php  $get_version = 1.3; 
+	<?php  $get_version = 1.4; 
 
 	$section = file_get_contents("https://raw.githubusercontent.com/VladislavMilev/wp-wizard/master/README.md", FALSE, NULL, 22, 3);
 
