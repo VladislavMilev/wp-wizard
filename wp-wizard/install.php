@@ -19,7 +19,9 @@ function relocateWP(){
 	
 	global $template_testing_folder, $wp_zip_path, $prodId;
 
+	// $source = $wp_zip_path; // Убрать комментарий, если требуется всегда загружать локальный ZIP WordPress.
 	$source = "https://wordpress.org/latest.zip";
+	
 	$dest = "wordpress.zip";
 	copy($source, $dest);
 
@@ -89,15 +91,11 @@ function getGITrepository(){
 
 	global $is_git, $template_testing_folder, $prodId, $ROOT;
 
-	
-
 	if($is_git == 'Yes'){
 
 		$_getLink = $_GET['prod_name'];
-		$_link_to_git = "http://products.git.devoffice.com/templates/prod-".$prodId;
+		$_link_to_git = "http://products.git.devoffice.com/templates/prod-".$prodId; //Это префикс-линка GIT
 		$dir    = $template_testing_folder;
-
-		// 21260
 
 		$_masterLink = $_link_to_git . "/tree/master";
 		$_packageLink = $_link_to_git . "/tree/package";
@@ -106,10 +104,16 @@ function getGITrepository(){
 		$_getPackageZip = $_link_to_git . "/repository/archive.zip?ref=package";
 
 
-		$source = $_getMasterZip;
-		$dest = "master.zip";
+		$source_master = $_getMasterZip;
+		$source_package = $_getPackageZip;
 
-		copy($source, $dest);
+		$dest_master = "master.zip";
+		$dest_package = "package.zip";
+
+		copy($source_master, $dest_master);
+		copy($source_package, $dest_package);
+
+		//unzip MASTER-repo 
 
 		$zip = new ZipArchive;
 		$zip->open("master.zip");
@@ -128,7 +132,18 @@ function getGITrepository(){
 		}
 		$trimmed = rtrim($result);
 		rename($ROOT."/"."master/".$files[0], "$template_testing_folder"."\\"."$prodId"."\\"."wp-content"."\\"."themes"."\\"."$trimmed");
+
+		//unzip PACKAGE-repo 
 		
+		$zip = new ZipArchive;
+		$zip->open("package.zip");
+		$zip->extractTo($ROOT."//package");
+		$zip->close();
+
+		$files = scandir($ROOT."/package", 1);
+		
+		rename($ROOT."/"."package/".$files[0]."/"."theme"."/"."manual_install"."/"."uploads", "$template_testing_folder"."\\"."$prodId"."\\"."wp-content"."\\"."uploads");
+
 	}
 
 }

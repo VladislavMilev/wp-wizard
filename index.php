@@ -7,7 +7,7 @@
 	<link rel="icon" type="image/vnd.microsoft.icon" href="img/Wordpress_logo_8.png">
 </head>
 <body>
-	<?php  $get_version = 1.4; 
+	<?php  $get_version = 1.5; 
 
 	$section = file_get_contents("https://raw.githubusercontent.com/VladislavMilev/wp-wizard/master/README.md", FALSE, NULL, 22, 3);
 
@@ -23,7 +23,7 @@
 		<label id="kava" for="is_kava">NEED KAVA?</label>
 		
 		<input id="is_git" type="checkbox" name="is_git" value="Yes">
-		<label id="is_git" for="is_git">NEED MASTER GIT?</label>
+		<label id="is_git" for="is_git">NEED GIT?</label>
 	</form>
 
 <a class="version" href="https://github.com/VladislavMilev/wp-wizard" target="_blank">

@@ -75,7 +75,9 @@ html,body {
 }
 
 html {
-	background:#333 url(img/backgound.jpg) no-repeat center bottom;
+	background:#333 url(https://cdn.dribbble.com/users/504740/screenshots/5688861/elements.jpg) no-repeat center bottom;
+	/*background:#333 url(img/backgound.jpg) no-repeat center bottom;*/
+	/*background:#333 url(https://steamusercontent-a.akamaihd.net/ugc/921419596799639780/0B3BBFE4CEFCEFF40798C3C375F16344023F161C/) no-repeat center bottom;*/
 	background-size:cover;
 }
 
