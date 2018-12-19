@@ -1,4 +1,4 @@
-﻿input[type=text]{
+﻿input[type=text], .select{
 	
 	border:2px solid rgba(255,255,255,.5);
 	font-size:1.75em;
@@ -8,7 +8,7 @@
 	background:transparent;
 	transition:all .100s;
 	position:absolute;
-	left:30%;
+	right:30%;
 	width: 40%;
 	bottom: 200px;
 	
@@ -24,6 +24,15 @@
 		text-shadow:0 0 .125em white;
 		box-shadow:0 0 .25em white,inset 0 0 .25em white;
 	}
+}
+
+.select{
+	color:#958792;
+	border-radius:.25em;
+	border-color: transparent;
+	background:transparent;
+	width: 5%;
+	margin-left: 35%;
 }
 
 canvas {
@@ -153,19 +162,25 @@ a.donate:hover {
 
 #is_kava{
 	position: absolute;
-    left: 30%;
+    right: 30%;
     bottom: 255px;
 }
 
-#is_git{
+#is_git_package{
 	position: absolute;
-    left: 40%;
+    right: 38%;
+    bottom: 255px;
+}
+
+#is_git_master{
+	position: absolute;
+    right: 47%;
     bottom: 255px;
 }
 
 label#kava{
 	position:absolute;
-	left:31%;
+	right:31%;
 	bottom: 250px;
 	font-size:1em;
 	padding:.25em .5em .3125em;
@@ -175,9 +190,22 @@ label#kava{
 	transition:all .100s;
 }
 
-label#is_git{
+label#is_git_package{
 	position:absolute;
-	left:41%;
+	right:39%;
+	bottom: 250px;
+	font-size:1em;
+	padding:.25em .5em .3125em;
+	color:rgba(255,255,255,.4);
+	border-radius:.25em;
+	background:transparent;
+	transition:all .100s;
+
+}
+
+label#is_git_master{
+	position:absolute;
+	right:48%;
 	bottom: 250px;
 	font-size:1em;
 	padding:.25em .5em .3125em;

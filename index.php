@@ -7,7 +7,7 @@
 	<link rel="icon" type="image/vnd.microsoft.icon" href="img/Wordpress_logo_8.png">
 </head>
 <body>
-	<?php  $get_version = 1.5; 
+	<?php  $get_version = 1.6; 
 
 	$section = file_get_contents("https://raw.githubusercontent.com/VladislavMilev/wp-wizard/master/README.md", FALSE, NULL, 22, 3);
 
@@ -17,13 +17,23 @@
 
 	<form action="wp-wizard/install.php">
 		<input type="text" name="prodId" required="true" placeholder="PROD-ID"/></br>
+		<select class="select" name="is_version">
+  			<option value="_1">v1</option>
+  			<option value="_2">v2</option>
+  			<option value="_3">v3</option>
+  			<option value="_4">v4</option>
+  			<option value="_5">v5</option>
+		</select>
 		<input class="btn" type="submit" value="" /></br>
 
 		<input id="is_kava" type="checkbox" name="is_kava" value="Yes">
 		<label id="kava" for="is_kava">NEED KAVA?</label>
 		
-		<input id="is_git" type="checkbox" name="is_git" value="Yes">
-		<label id="is_git" for="is_git">NEED GIT?</label>
+		<input id="is_git_master" type="checkbox" name="is_git_master" value="Yes">
+		<label id="is_git_master" for="is_git_master">NEED MASTER?</label>
+
+		<input id="is_git_package" type="checkbox" name="is_git_package" value="Yes">
+		<label id="is_git_package" for="is_git_package">NEED PACKAGE?</label>
 	</form>
 
 <a class="version" href="https://github.com/VladislavMilev/wp-wizard" target="_blank">
